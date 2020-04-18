@@ -1,9 +1,100 @@
-{% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>MATEUSZ MIZERSKI</title>
+	<link rel= "stylesheet" href = "style.css" font= "22" type = "text/css"/ >
+	<style type = "text/css">
+		body{
+			background-image: url(physics.jpg);
+
+			background-repeat:no-repeat;
+			background-position: 1px 1px;
+			background-size: 100% 350%;
+			background-attachment: scroll;
+
+
+		}
+		h1 {
+			padding-top:5px;
+			font-size: 200%;
+			width: 600px;
+			height: 40px;}
+		h2 {color: white;
+			font-size: 250%;
+			padding: 5px;
+			width: 600px;
+			height: 70px;}
+		 }
+
+		 a:link{
+			font-size: 40px;
+			color:gray;
+			font-style:normal;
+			text-decoration: none;
+		 }
+		 a:active{
+			font-size: 40px;
+			color:gray;
+			font-style:normal;
+			text-decoration: none;
+		 }a:hover{
+			font-size: 40px;
+			color:gray;
+			font-style:normal;
+			text-decoration: none;
+		 }a:visited{
+			font-size: 40px;
+			color:gray;
+			font-style:italic;
+			text-decoration: none;
+		 }
+
+		 p{
+			color:gray;
+			font-style:italic;
+			font-size: 20px;
+		}
+		h3{
+			font-size:20px;
+			color:white;
+		 }
+
+	</style>
+</head>
+
+
+
+<body  >
+	<div id="body">
+		<font size = "10" face = "Times New Roman" color = "Black"></font>
+		{% load static %}
+		<h>Mateusz MIZERSKI</h>
+
+		<h1 > Django Project  </h1>
+		{% if latest_question_list %}
+			<ul>
+			{% for question in latest_question_list %}
+				<li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>
+			{% endfor %}
+			</ul>
+		{% else %}
+			<p>No question are available.</p>
+		{% endif %}
+
+		<p color = "black">Below are links to: <em> RESEARCH and MyCV</p>
+		<a href = "{% static "basic_app/newsite.html" %}"> <img width = "100px" height = "90px" src = "{% static "basic_app/research.jpg" %}"
+		style="position: absolute; left: 20px; top: 570px" /> </a>
+		<a href = "MATEUSZMIZERSKI_CV.pdf" top= "10px"> <img width = "100px" height = "90px" src = "{% static "basic_app/mycv.jpg" %}"
+		style="position: absolute; left: 160px; top: 570px" />  </a>
+
+
+		<h1 style="position: absolute; left: 70px; top: 470px" > Link to RESEARCH</h1>
+		<h1 style="position: absolute; left: 400px; top: 470px" > Link to CV</h3>
+		<p  style = "position:relative; top:500px; left:1320px;">by Mateusz Mizerski</p>
+	</div>
+</body>
+
+
+
+</html>
